@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@juspay-tech/hyper-js";
+import { Elements } from "@juspay-tech/react-hyper-js";
 
 import CheckoutForm from "./CheckoutForm";
 import "./App.css";
@@ -10,7 +10,7 @@ import "./App.css";
 // This is a public sample test API key.
 // Don’t submit any personally identifiable information in requests made with this key.
 // Sign in to see your own test API key embedded in code samples.
-const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
+const stripePromise = loadStripe("pk_snd_3b33cd9404234113804aa1accaabe22f");
 
 export default function App() {
   const [clientSecret, setClientSecret] = useState("");

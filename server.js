@@ -3,7 +3,7 @@ const app = express();
 // This is a public sample test API key.
 // Don’t submit any personally identifiable information in requests made with this key.
 // Sign in to see your own test API key embedded in code samples.
-const stripe = require("stripe")('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+const stripe = require("@juspay-tech/hyperswitch-node")('snd_c691ade6995743bd88c166ba509ff5da');
 
 app.use(express.static("public"));
 app.use(express.json());
@@ -21,10 +21,7 @@ app.post("/create-payment-intent", async (req, res) => {
   // Create a PaymentIntent with the order amount and currency
   const paymentIntent = await stripe.paymentIntents.create({
     amount: calculateOrderAmount(items),
-    currency: "usd",
-    automatic_payment_methods: {
-      enabled: true,
-    },
+    currency: "USD",
   });
 
   res.send({
